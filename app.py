@@ -27,7 +27,7 @@ def a_function():
     int = 42  # Noncompliant; int is a builtin
 
 
-@app.route('/')s
+@app.route('/')
 def hello_world():
     # return 'Hello, Docker!'
     return str(sum_factorial())
