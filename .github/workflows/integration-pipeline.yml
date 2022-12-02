@@ -82,7 +82,7 @@ jobs:
 
   # Build
   push_to_registry:
-    needs: [editorconfig-check, linter]
+    needs: [editorconfig-check, linter, git-leaks]
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
