@@ -44,14 +44,13 @@ Feel free to fork this repository and work in the forked version.
 
 * Deploy to UAT
 * DAST - ZAP
-* SSL Check - sslyze
+* SSL Check - ssllabs
 
 ## Additional
 
 * Integration test
 * Infrastructure test
 * More code quality tests
-* Matrix build
 * GitHub issues integration
 * Measure Lead time
 * Add GitHub self-hosted runner
@@ -59,4 +58,15 @@ Feel free to fork this repository and work in the forked version.
 * Commit signature verification
 * Sign container images
 * Use security hardened base image - CIS
-* create PR templates
+* Use alternative Docker repositories - <https://gallery.ecr.aws>
+* Create PR templates
+* Rewrite all steps to be command lines instead of GitHub Actions
+* Repeat the same steps in GitLab CI, Azure DevOps or BitBucket
+
+## Setup AWS account
+
+* Create AWS account - <https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/>
+* Redeem credits - <https://aws.amazon.com/awscredits/>
+* Set Budget alarm - <https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html>
+
+## test1
