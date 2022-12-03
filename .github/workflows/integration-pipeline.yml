@@ -179,7 +179,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-central-1
+          aws-region: eu-west-1
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -206,7 +206,7 @@ jobs:
           region: eu-west-1
           cpu: 1
           memory: 2
-          wait-for-service-stability-seconds: true
+          wait-for-service-stability-seconds
           port: 5000
 
       - name: App Runner output
