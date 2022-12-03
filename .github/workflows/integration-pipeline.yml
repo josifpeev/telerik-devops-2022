@@ -206,7 +206,7 @@ jobs:
           region: eu-west-1
           cpu: 1
           memory: 2
-          wait-for-service-stability-seconds
+          wait-for-service-stability: true
           port: 5000
 
       - name: App Runner output
