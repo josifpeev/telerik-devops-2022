@@ -245,5 +245,5 @@ jobs:
   #         target: "https://${{ needs.deploy.outputs.service-url }}"
   #         rules_file_name: ".zap/rules.tsv"
   #         cmd_options: "-a"
-  # detele this lin
+  # detele this line
 
