@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - uses: editorconfig-checker/action-editorconfig-checker@v1
+      - uses: editorconfig-checker/action-editorconfig-checker@main
   markdown-lint:
     name: markdown lint
     runs-on: ubuntu-20.04
@@ -195,7 +195,6 @@ jobs:
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
-      #    echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
       # - name: Deploy to App Runner Image
       #   id: deploy-apprunner
