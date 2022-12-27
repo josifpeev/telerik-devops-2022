@@ -203,8 +203,6 @@ jobs:
           service: app-runner-git-deploy-service
           image: ${{ steps.build-image.outputs.image }}
           access-role-arn: ${{ secrets.ROLE_ARN }}
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: eu-west-1
           cpu: 1
           memory: 2
@@ -247,5 +245,5 @@ jobs:
   #         target: "https://${{ needs.deploy.outputs.service-url }}"
   #         rules_file_name: ".zap/rules.tsv"
   #         cmd_options: "-a"
-  # detele this line test d
+  # detele this line test dd
 
