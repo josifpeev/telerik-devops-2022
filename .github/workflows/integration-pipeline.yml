@@ -201,8 +201,8 @@ jobs:
         uses: awslabs/amazon-app-runner-deploy@main
         with:
           service: app-runner-git-deploy-service
-          access-role-arn: ${{ secrets.ROLE_ARN }}
           image: ${{ steps.build-image.outputs.image }}
+          access-role-arn: ${{ secrets.ROLE_ARN }}
           region: eu-west-1
           cpu: 1
           memory: 2
