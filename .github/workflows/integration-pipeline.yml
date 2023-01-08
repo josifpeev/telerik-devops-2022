@@ -202,8 +202,7 @@ jobs:
         with:
           service: app-runner-git-deploy-service
           image: ${{ steps.build-image.outputs.image }}
-#         access-role-arn: ${{ secrets.ROLE_ARN }}
-          access-role-arn: djimbo
+        #  access-role-arn: ${{ secrets.ROLE_ARN }}
           region: eu-west-1
           cpu: 1
           memory: 2
