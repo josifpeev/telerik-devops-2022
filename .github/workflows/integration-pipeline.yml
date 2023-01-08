@@ -223,7 +223,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: "owasp/zap2docker-stable"
-          target: "https://${{ needs.deploy.outputs.service-url }}"
+          target: "https://${{ needs.deploy-apprunner.outputs.service-url }}"
           rules_file_name: ".zap/rules.tsv"
           cmd_options: "-a"
 
