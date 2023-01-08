@@ -195,6 +195,7 @@ jobs:
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        # app-runner-service-role arn
 
       - name: Deploy to App Runner Image
         id: deploy-apprunner
@@ -212,19 +213,19 @@ jobs:
       - name: App Runner output
         run: echo "App runner output ${{ steps.deploy-apprunner.outputs.service-url }}"
 
-  # zap_scan:
-  #   needs: [deploy-uat]
-  #   runs-on: ubuntu-latest
-  #   name: Scan the webapplication
-  #   steps:
-  #     - name: ZAP Scan
-  #       uses: zaproxy/action-full-scan@v0.4.0
-  #       with:
-  #         token: ${{ secrets.GITHUB_TOKEN }}
-  #         docker_name: "owasp/zap2docker-stable"
-  #         target: "https://${{ needs.deploy.outputs.service-url }}"
-  #         rules_file_name: ".zap/rules.tsv"
-  #         cmd_options: "-a"
+  zap_scan:
+    needs: [deploy-uat]
+    runs-on: ubuntu-latest
+    name: Scan the webapplication
+    steps:
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.4.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          docker_name: "owasp/zap2docker-stable"
+          target: "https://${{ needs.deploy.outputs.service-url }}"
+          rules_file_name: ".zap/rules.tsv"
+          cmd_options: "-a"
 
   # deploy-prod:
   #   needs: [zap_scan]
